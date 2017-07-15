@@ -15,12 +15,14 @@ class PaymentController extends Controller
 		$cart = UserCart::find($cart_id);
 		//return response()->json($cart);
 		
-		if($this->validateAccount($account_number, $cart->id)){
+		$amount = $cart->totalprice + 50;
+		
+		if($this->validateAccount($account_number, $amount) == 1){
 			$curl = curl_init();
 			
 			$transaction_id = 'TRN' . time();
 			$channel_id = 'SL01';
-			$amount = $cart->totalprice + 50;
+			
 
 			curl_setopt_array($curl, array(
 			  CURLOPT_URL => "https://api-uat.unionbankph.com/uhac/sandbox/transfers/initiate",
@@ -50,6 +52,10 @@ class PaymentController extends Controller
 			} else {
 			  $response = json_decode($response);
 			  
+			  if(is_array($response)){
+				$response = $response[0];
+			  }
+			  
 			  $payment = new PaymentDetails;
 			  
 			  $payment->transaction_id = $response->transaction_id;
@@ -58,7 +64,7 @@ class PaymentController extends Controller
 			  $payment->confirmation_no = $response->confirmation_no;
 			  $payment->error_message = $response->error_message;
 			  $payment->paid_amount = $amount;
-			  $payment->created_at = date('YYYY-MM-DD H:i:s');
+			  $payment->created_at = date('Y-m-d H:i:s');
 			  $payment->save();
 			  
 			  if($response->status == 'S'){
@@ -73,7 +79,7 @@ class PaymentController extends Controller
 			
 			return response()->json($temp);
 		}else{
-			$temp['status'] 'invalid';
+			$temp['status'] = 'invalid';
 			return response()->json($temp);
 		}	
 		
@@ -108,6 +114,11 @@ class PaymentController extends Controller
 		  return -1;
 		} else {
 		  $response = json_decode($response);
+		  
+		  if(is_array($response)){
+			$response = $response[0];
+		  }
+		  
 		  if($response->status == 'ACTIVE' && $response->current_balance > $amount){
 			return 1;
 		  }else{
