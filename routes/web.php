@@ -21,4 +21,4 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/user/types', 'UserTypeController@list');
 
-Route::get('/user/login', 'UserTypeController@dologin');
+Route::post('/user/login', 'UserTypeController@dologin');
