@@ -1,0 +1,16 @@
+
+<div layout="column" layout-fill>
+    <div flex>
+        <md-list-item layout="row">
+          <div flex class="bold">Food</div>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item layout="row" ng-repeat-start="item in vm.items" ui-sref="recipe-view({ id: item.id })">
+          <div flex>{{ item.menu_name }}</div>
+          <md-button class="md-icon-button">
+            <md-icon class="material-icons">search</md-icon>
+          </md-button>
+        </md-list-item>
+        <md-divider ng-repeat-end></md-divider>
+    </div>
+</div>

@@ -27,7 +27,7 @@ define([], function() {
 
             function logout (){
                 $localStorage.access_token = null;
-                $localStorage.user = {};
+                $localStorage.user = null;
             }
 
             function authenticated (){

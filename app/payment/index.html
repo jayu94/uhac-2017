@@ -1,21 +1,21 @@
-<div layout-padding layout="column">
-    
+ <div layout="row" layout-sm="column" layout-align="space-around" ng-show="vm.loading">
+    <md-progress-circular md-mode="indeterminate"></md-progress-circular>
+</div>
+<div layout-padding layout="column" ng-show="!vm.loading">
     <div flex>
         <div class="md-headline">
             UNIONBANK
             <span class="md-title">Payment Gateway</span>
         </div>
-        
-        <div class="md-subhead bold">Credit card information</div>
         <md-divider></md-divider>
         <div layout="column">
             <md-input-container>
-                <md-icon class="material-icons">credit_card</md-icon>
-                <label for="CardNo">Card Number</label>
+                <md-icon class="material-icons">attach_money</md-icon>
+                <label for="CardNo">Account Number</label>
                 <input type="text" name="CardNo"  />
             </md-input-container>
     
-            <div layout="row">
+            <!--<div layout="row">
                 <md-input-container flex>
                     <md-icon class="material-icons">date_range</md-icon>
                     <label for="mm">MM</label>
@@ -31,7 +31,7 @@
                     <label for="CVV">CVV</label>
                     <input type="text" name="CVV"  />
                 </md-input-container>
-            </div>
+            </div>-->
         </div>
         <div class="md-subhead bold">Card holder information</div>
         <md-divider></md-divider>
@@ -63,7 +63,7 @@
     </div>
     <div layout="column" class="primary">
         <md-button class="md-raised" ui-sref="payment" aria-label="login" md-colors="{ background: 'green-500'}"
-            flex type="button"> <span class="md-title" ng-click="vm.showSuccessModal($event)">Checkout</span>
+            flex type="button"> <span class="md-title" ng-click="vm.showConfirmModal($event)">Checkout</span>
         </md-button>
     </div>
 </div>

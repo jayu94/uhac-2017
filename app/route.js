@@ -41,7 +41,18 @@ define([], function () {
                 // controller: 'paymentController',
                 // controllerAs: 'vm'
             })
-
+             .state('recipe', {
+                url: "/recipe",
+                templateUrl: './app/recipe/index.html',
+                controller: 'recipeController',
+                controllerAs: 'vm'
+            })
+            .state('recipe-view', {
+                url: "/recipe/view/:id",
+                templateUrl: './app/recipe/view.html',
+                controller: 'recipeViewController',
+                controllerAs: 'vm'
+            })
     }
 
     return ["$stateProvider", "$urlRouterProvider", "$locationProvider", route];

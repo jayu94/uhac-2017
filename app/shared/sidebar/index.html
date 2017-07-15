@@ -40,6 +40,9 @@
         <md-item-content md-ink-ripple layout="row" flex>
           {{item.name}}
         </md-item-content>
+        <span class="badge md-caption" ng-if="item.link == 'cart'">
+          &nbsp;10&nbsp;
+        </span>
     </md-list-item>
     <md-divider></md-divider>
   </div>

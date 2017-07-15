@@ -196,3 +196,10 @@ md-list-item .material-icons:first-child {
 		padding: 0; 
 	}
 }
+
+.badge {
+	border-radius: 50%;
+	background: red;
+	color: white;
+	padding: 0px 7px;
+}

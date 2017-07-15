@@ -25,12 +25,16 @@ define([
 	'app/cart/cartController',
 	'app/order/orderCreateController',
 	'app/payment/paymentController',
+	'app/recipe/recipeController',
+	'app/recipe/recipeViewController',
 
 ], function(angular, angularRoute, aria, animate, material, messages, datatable, loadingBar, storage, config, route, headerCtrl, sidebarCtrl, messageService, userService, login, 
 orderViewController,
 cartController,
 orderCreateController,
-paymentController) {
+paymentController,
+recipeController,
+recipeViewController) {
 	
 	'use strict';
 	
@@ -55,8 +59,8 @@ paymentController) {
 		.controller('cartController', cartController)
 		.controller('orderCreateController', orderCreateController)
 		.controller('paymentController', paymentController)
-
-
+		.controller('recipeController', recipeController)
+		.controller('recipeViewController', recipeViewController)
 
 		.run(['$rootScope', '$state', 'userService', 'messageService', function run($rootScope, $state, userService, messageService) {
 
