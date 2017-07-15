@@ -3,17 +3,16 @@
 
     angular
         .module('app')
-        .controller('homeController', ControllerController);
+        .controller('homeController', homeController);
 
-    ControllerController.$inject = ['dependency1'];
-    function ControllerController(dependency1) {
+    var ctrl = ['$http', '$localStorage', homeController]
+
+    function homeController($localStorage) {
         var vm = this;
         
+        vm.init = function(){
 
-        activate();
 
-        ////////////////
-
-        function activate() { }
+        }();
     }
 })();

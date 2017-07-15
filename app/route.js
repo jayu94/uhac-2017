@@ -18,7 +18,7 @@ define([], function () {
                 controllerAs: 'vm'
             })
             .state('order-view', {
-                url: "/order/view",
+                url: "/order/view/:id",
                 templateUrl: './app/order/view.html',
                 controller: 'orderViewController',
                 controllerAs: 'vm'
@@ -26,8 +26,8 @@ define([], function () {
             .state('cart', {
                 url: "/cart",
                 templateUrl: './app/cart/index.html',
-                // controller: 'cartController',
-                // controllerAs: 'vm'
+                controller: 'cartController',
+                controllerAs: 'vm'
             })
              .state('payment', {
                 url: "/payment",

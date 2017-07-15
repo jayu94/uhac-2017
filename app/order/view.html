@@ -1,12 +1,9 @@
-<img src="./assets/images/burger.jpg" alt="" flex style="width:100%;">
+<img ng-src="{{'./assets/images/' + vm.id + '.jpg'}}" alt="" flex style="width:100%;">
 
 <div layout-padding>
-    <div class="md-title text-center">Cheese Burger</div>
+    <div class="md-title text-center">{{ vm.item.menu_name }}</div>
     <p class="text-justify">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-        Aliquam ipsum magni dolorem odit voluptate ex at quidem, 
-        iste nisi, id hic inventore. Ipsam magni alias at, illum, 
-        voluptas corporis impedit!
+        {{ vm.item.description }}
     </p>
 
     <md-divider></md-divider>
@@ -88,19 +85,11 @@
         <md-divider></md-divider>
         <div layout-padding layout-margin>
             <div layout-fill>
-                Kethup </br>
-                Bacon </br>
-                Ground Meat </br>
-                Meat Analogue </br>
-                Brioche </br>
-                Feta </br>
-                Common Mushrooms </br>
-                Blue Cheese </br>
+                <span ng-repeat="ingredient in vm.item.ingredients">{{ 'x' + ingredient.quantity + ' ' + ingredient.ingredient_name }} </br></span>
             </div>
         </div>
     </div>
 </div>
 <div layout="row" layout-padding>
-    <md-button flex>Add to cart</md-button>
-    <md-button flex>Back</md-button>
+    <md-button flex ui-sref="order-create">Back</md-button>
 </div>

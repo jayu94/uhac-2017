@@ -1,11 +1,18 @@
 
-
 <div layout="column" layout-fill>
     <div layout-padding class="md-display-1">
         <i class="material-icons">shopping_cart</i>
         Cart
     </div>
-    <div flex>
+    <div layout="column" ng-if="!vm.items || vm.items.length == 0" flex="40">
+      <div flex layout="row">
+        <md-icon flex="30" class="material-icons" style="font-size:100px;color:gray">sentiment_very_dissatisfied</md-icon>
+      </div>
+      <div flex="5"></div>
+      <div class="md-title text-center">Nothing to ShopLift</div>
+    </div>
+
+    <div flex ng-if="vm.items.length > 0">
         <md-list-item layout="row">
           <div flex="40" class="bold">
             Food
@@ -21,14 +28,10 @@
           <div flex></div>
         </md-list-item>
         <md-divider></md-divider>
-        <md-list-item layout="row" ng-repeat-start="i in [1,2,3,4,5]">
-          <div flex="40">
-            Cheese Burger
-          </div>
-          <div flex="20" class="text-right">
-              2
-          </div>
-          <div flex="25" class="text-right">43.00</div>
+        <md-list-item layout="row" ng-repeat-start="item in vm.items">
+          <div flex="40">{{ item.menu_name }}</div>
+          <div flex="20" class="text-right">{{ item.quantity }}</div>
+          <div flex="25" class="text-right">{{ (item.price * item.quantity) | currency:''}}</div>
         
           <div  class="text-right">
             <md-button class="md-icon-button" style="margin-left:10px;">
@@ -38,13 +41,12 @@
         </md-list-item>
         <md-divider ng-repeat-end></md-divider>
         <div layout="row" layout-padding>
-            <div flex="66" class="bold">Total</div>
-            <div flex="33" class="bold">100.00</div>
+            <div flex="60" class="bold">Total</div>
+            <div flex="40" class="bold">{{ vm.total | currency:'Php ' }}</div>
         </div>
-        
     </div>
     
-    <div layout="column" class="primary">
+    <div layout="column" class="primary" ng-if="vm.items.length > 0">
         <md-button class="md-raised" ui-sref="payment" aria-label="login" md-colors="{ background: 'green-500'}"
             flex type="button"> <span class="md-title">Checkout</span>
         </md-button>

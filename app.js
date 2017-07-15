@@ -22,11 +22,13 @@ define([
 
 	// controllers
 	'app/order/orderViewController',
+	'app/cart/cartController',
 	'app/order/orderCreateController',
 	'app/payment/paymentController',
 
 ], function(angular, angularRoute, aria, animate, material, messages, datatable, loadingBar, storage, config, route, headerCtrl, sidebarCtrl, messageService, userService, login, 
 orderViewController,
+cartController,
 orderCreateController,
 paymentController) {
 	
@@ -50,6 +52,7 @@ paymentController) {
 		.controller('sidebarController', sidebarCtrl)
 
 		.controller('orderViewController', orderViewController)
+		.controller('cartController', cartController)
 		.controller('orderCreateController', orderCreateController)
 		.controller('paymentController', paymentController)
 

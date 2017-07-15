@@ -34,7 +34,9 @@ define([], function() {
                 // DEMO PURPOSES ONLY:  
                 // return !$state.includes('login');
                 // COMMENT THIS OUT WHEN AUTH IS CONFIGURED
-                return $localStorage.access_token !== null && $localStorage.access_token !== undefined;
+                // return $localStorage.access_token !== null && $localStorage.access_token !== undefined;
+
+                return $localStorage.user !== null && $localStorage.user !== undefined;
             }
             
             return service;
