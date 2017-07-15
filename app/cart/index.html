@@ -1,0 +1,52 @@
+
+
+<div layout="column" layout-fill>
+    <div layout-padding class="md-display-1">
+        <i class="material-icons">shopping_cart</i>
+        Cart
+    </div>
+    <div flex>
+        <md-list-item layout="row">
+          <div flex="40" class="bold">
+            Food
+          </div>
+        
+          <div flex="20" class="text-right bold">
+            Quantity
+          </div>
+        
+          <div flex="25" class="text-right bold">
+            Price
+          </div>
+          <div flex></div>
+        </md-list-item>
+        
+        <md-list-item layout="row" ng-repeat="i in [1,2,3,4,5]">
+          <div flex="40">
+            Cheese Burger
+          </div>
+          <div flex="20" class="text-right">
+              2
+          </div>
+          <div flex="25" class="text-right">43.00</div>
+        
+          <div  class="text-right">
+            <md-button class="md-icon-button" style="margin-left:10px;">
+               <i style="margin-right:0;" class="material-icons">close</i>
+            </md-button>
+          </div>
+        </md-list-item>
+        <md-divider></md-divider>
+        <div layout="row" layout-padding>
+            <div flex="66" class="bold">Total</div>
+            <div flex="33" class="bold">100.00</div>
+        </div>
+        
+    </div>
+    
+    <div layout="column" class="primary">
+        <md-button class="md-raised" ui-sref="payment" aria-label="login" md-colors="{ background: 'green-500'}"
+            flex type="button"> <span class="md-title">Checkout</span>
+        </md-button>
+    </div>
+</div>

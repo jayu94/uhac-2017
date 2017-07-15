@@ -1,0 +1,64 @@
+<div layout="column" layout-fill md-colors="{ background: 'grey-50'}">
+	<div flex="5">&nbsp;</div>
+	<div flex="20" layout-align="center center" layout="column">
+		<img src="./assets/images/logo.PNG" flex style="margin:auto;height:100%;width:auto;" alt="">
+	</div>
+	<form action="" flex="65">
+	<div layout="column" layout-padding>
+		<md-input-container flex>
+			<label>Email</label>
+			<input type="email" name="email" required ng-model="vm.user.email" class="font-white">
+			<div ng-messages="loginForm.email.$error">
+				<ng-message when="required" translate>This field is required.</ng-message>
+				<ng-message when="email" translate>Invalid email address.</ng-message>
+			</div>
+		</md-input-container>
+		<md-input-container flex>
+			<label>Password</label>
+			<input type="password" name="password" required ng-model="vm.user.password" class="font-white">
+			<div ng-messages="loginForm.password.$error">
+				<ng-message when="required" translate>This field is required.</ng-message>
+			</div>
+		</md-input-container>
+	</div>
+	</form>
+	<div flex layout="row" md-colors="{ background: 'grey-200'}" layout-fill layout-align="center center">
+		<md-button class="md-link md-primary" aria-label="login" flex type="button" ui-sref="home">Login</md-button>
+	</div>
+</div>
+
+<!--
+<div layout="row" layout-align="center center">
+	<form ng-submit="vm.login()" novalidate name="loginForm">
+		<md-card flex-gt-sm="25" class="login">
+			<md-toolbar layout="row"  layout-align="center center">
+				<h4>CECE-STAGING</h4>
+			</md-toolbar>
+			<md-card-content>
+				<div layout="column" layout-padding>
+					<md-input-container flex layout-fill>
+						<label>Email</label>
+						<input type="email" name="email" required ng-model="vm.user.email">
+						<div ng-messages="loginForm.email.$error">
+							<ng-message when="required" translate>This field is required.</ng-message>
+							<ng-message when="email" translate>Invalid email address.</ng-message>
+						</div>
+					</md-input-container>
+					<md-input-container flex layout-fill>
+						<label>Password</label>
+						<input type="password" name="password" required ng-model="vm.user.password">
+						<div ng-messages="loginForm.password.$error">
+							<ng-message when="required" translate>This field is required.</ng-message>
+						</div>
+					</md-input-container>
+				</div>
+			</md-card-content>
+			<md-card-footer>
+				<div layout="column" class="primary">
+					<md-button class="md-raised md-primary" aria-label="login" 
+					flex type="button" ui-sref="home">Login</md-button>
+				</div>
+			</md-card-footer>
+		</md-card>
+	</form>
+</div>-->

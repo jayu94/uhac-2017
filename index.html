@@ -1,0 +1,47 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<base href="/">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimal-ui" />
+		<!-- FONTS -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic">
+		<!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+		<!-- PLUGINS -->
+		<link rel="stylesheet" href="lib/angular-material/angular-material.min.css">
+		<link rel="stylesheet" href="lib/angular-material-data-table/dist/md-data-table.min.css">
+		<link rel="stylesheet" href="lib/angular-loading-bar/src/loading-bar.css" media="all">
+		<link rel="stylesheet" href="assets/css/angular-material-icons.css?family=Material+Icons">
+		<!-- CUSTOM -->
+		<link rel="stylesheet" href="assets/css/site.css">
+	</head>
+	<body layout="row" layout-fill ng-cloak>
+		<md-sidenav
+			layout="column"
+			ng-show="auth.authenticated()"
+			md-component-id="left" 
+			md-is-locked-open="$mdMedia('gt-sm')"
+			md-colors="{ background: 'grey-50'}"
+			ng-controller="sidebarController as sidebar" 
+			ng-include="'app/shared/sidebar/index.html'"
+			class="sidebar">
+		</md-sidenav>
+		<div layout="column" flex layout-fill>
+			<md-toolbar class="md-whiteframe-z1" md-colors="{ background: 'grey-50'}"
+				ng-show="auth.authenticated()" layout="row"
+			  	ng-include="'app/shared/header/index.html'"
+			  	ng-controller="headerController as header">
+		  	</md-toolbar>
+			<md-content class="content" flex layout="column" id="scroll-content">
+				<ui-view flex></ui-view>
+			</md-content>
+			<md-button class="md-fab md-fab-bottom-right docs-scroll-fab"
+				scroll-top
+				content="scroll-content"
+				aria-label="Back to Top">
+				<md-tooltip md-direction="top">Back to Top</md-tooltip>
+				<md-icon class="material-icons">keyboard_arrow_up</md-icon>
+			</md-button>
+		</div>
+	</body>
+	<script src="lib/require/require.js" data-main="main"></script>
+</html>

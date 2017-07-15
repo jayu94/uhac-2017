@@ -1,0 +1,57 @@
+<md-toolbar class="" md-colors="{ background: 'grey-50'}" md-whiteframe="1">
+
+<div class="md-toolbar-tools">
+    <h2 flex md-truncate>CECE PROJECT</h2>
+</div>
+</md-toolbar>
+
+<md-list flex layout="column">
+  <div layout="row" layout-sm="column" layout-align="space-around" ng-if="sidebar.menu.length == 0">
+    <md-progress-circular md-mode="indeterminate" class="md-accent"></md-progress-circular>
+  </div>
+
+  <div ng-repeat="item in sidebar.menu">
+    <md-list-item  ng-if="item.type == 'toggle'" ng-click="sidebar.toggleItem($index)" layout="row">
+ 				<ng-md-icon icon="{{ item.icon }}"></ng-md-icon>
+
+
+        <!--<i class="material-icons">{{ item.icon }}</i>-->
+        <md-item-content md-ink-ripple layout="row" flex>
+          {{item.name}}
+        </md-item-content>
+ 				<ng-md-icon icon="{{ item.open ? "keyboard_arrow_up" : "keyboard_arrow_down" }}"></ng-md-icon>
+        
+        <i class="material-icons">{{ item.open ? "keyboard_arrow_up" : "keyboard_arrow_down" }}</i>
+    </md-list-item>
+    <div layout="column" class="submenu" ng-show="item.open" ng-if="item.type == 'toggle' && item.items && item.items.length > 0">
+      <md-list>
+        <md-list-item ng-repeat="subItem in item.items" ng-click="null" ui-sref="{{ subItem.link }}"
+          md-colors="{ background: (state.includes(subItem.link) ? 'grey-100' : 'grey-50')}">
+          <md-item-content md-ink-ripple layout="row" flex>
+            <span class="md-caption">
+              {{subItem.name}}
+            </span>
+          </md-item-content>
+        </md-list-item>
+      </md-list>
+    </div>
+
+    <md-list-item ui-sref="{{ item.link }}" ng-if="item.type != 'toggle'"
+        md-colors="{ background: (state.includes(item.link) ? 'grey-100' : 'grey-50')}" layout="row">
+        <i class="material-icons">{{ item.icon }}</i>
+        <md-item-content md-ink-ripple layout="row" flex>
+          {{item.name}}
+        </md-item-content>
+    </md-list-item>
+  </div>
+
+  <div layout="column" layout-align="end stretch" flex>
+    <md-divider></md-divider>
+    <md-list-item  ng-click="sidebar.logout()" layout="row">
+        <i class="material-icons">power_settings_new</i>
+        <md-item-content md-ink-ripple layout="row" flex>
+          Logout
+        </md-item-content>
+    </md-list-item>
+  </div>
+</md-list>

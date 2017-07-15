@@ -1,0 +1,106 @@
+<img src="./assets/images/burger.jpg" alt="" flex style="width:100%;">
+
+<div layout-padding>
+    <div class="md-title text-center">Cheese Burger</div>
+    <p class="text-justify">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+        Aliquam ipsum magni dolorem odit voluptate ex at quidem, 
+        iste nisi, id hic inventore. Ipsam magni alias at, illum, 
+        voluptas corporis impedit!
+    </p>
+
+    <md-divider></md-divider>
+    <div class="md-title" layout="row" layout-fill ng-init="vm.infoOpen = false" ng-click="vm.infoOpen = !vm.infoOpen">
+        <span flex>Info</span>
+        <i class="material-icons">{{ vm.infoOpen ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}</i>
+    </div>
+    <div ng-show="vm.infoOpen">
+        <md-divider></md-divider>
+        <div layout="column" layout-padding layout-margin >
+            <div layout="row" layout-fill>
+                <div flex="60">Serving Size</div>
+                <div flex>1 Serving</div>
+            </div>
+            <div layout="row" layout-fill>
+                <div flex="60">Prep &amp; Cook Time</div>
+                <div flex>30 minutes</div>
+            </div>
+            <div layout="row" layout-fill>
+                <div flex="60">Cooking Skill</div>
+                <div flex>Intermediate</div>
+            </div>
+        </div>
+        <div layout="row" layout-align="center center">
+            <md-icon class="material-icons">person</md-icon>&nbsp;&nbsp;
+            <p flex>
+                <span class="md-title">By chef John Doe</span>
+            </p>
+        </div>
+    </div>
+
+    <md-divider></md-divider>
+    <div class="md-title" layout="row" layout-fill ng-init="vm.nutritionOpen = false" ng-click="vm.nutritionOpen = !vm.nutritionOpen">
+        <span flex>Nutrition Facts</span>
+        <i class="material-icons">{{ vm.nutritionOpen ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}</i>
+    </div>
+
+    <div ng-show="vm.nutritionOpen">
+        <md-divider></md-divider>
+        <div layout="column" layout-padding layout-margin>
+            <div layout="row" layout-fill>
+                <div flex="50">
+                    <div class="text-center" >
+                        <span style="font-weight:bold;">Calories</span> </br>
+                        780
+                    </div>
+                </div>
+                <div flex="50">
+                    <div class="text-center" >
+                        <span style="font-weight:bold;">Protein</span> </br>
+                        68g
+                    </div>
+                </div>
+            </div>
+
+            <div layout="row" layout-fill>
+                <div flex="50">
+                    <div class="text-center" >
+                        <span style="font-weight:bold;">Total Carbs</span> </br>
+                        22g
+                    </div>
+                </div>
+                <div flex="50">
+                    <div class="text-center" >
+                        <span style="font-weight:bold;">Total Fat</span> </br>
+                        50g
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <md-divider></md-divider>
+    <div class="md-title" layout="row" layout-fill ng-init="vm.ingredientsOpen = false" ng-click="vm.ingredientsOpen = !vm.ingredientsOpen">
+        <span flex>Ingredients</span>
+        <i class="material-icons">{{ vm.ingredientsOpen ? 'keyboard_arrow_up' : 'keyboard_arrow_down'}}</i>
+    </div>
+    <div ng-show="vm.ingredientsOpen">
+        <md-divider></md-divider>
+        <div layout-padding layout-margin>
+            <div layout-fill>
+                Kethup </br>
+                Bacon </br>
+                Ground Meat </br>
+                Meat Analogue </br>
+                Brioche </br>
+                Feta </br>
+                Common Mushrooms </br>
+                Blue Cheese </br>
+            </div>
+        </div>
+    </div>
+</div>
+<div layout="row" layout-padding>
+    <md-button flex>Add to cart</md-button>
+    <md-button flex>Back</md-button>
+</div>

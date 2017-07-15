@@ -1,0 +1,35 @@
+<md-dialog aria-label="cart">
+    <form ng-cloak name="cartForm">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <h2>{{ food.name }}</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="close()">
+                    <md-icon class="material-icons" aria-label="Close dialog">close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content" layout="row" ng-init="food.quantity = 0" layout-align="center center">
+
+                <md-button class="md-icon-button " ng-click="food.quantity = food.quantity - 1" flex="35">
+                    <i class="material-icons">remove_circle</i>
+                </md-button>
+
+                <md-input-container flex>
+                    <input type="number" name="name" class="text-center md-display-1" ng-model="food.quantity" required></input>
+                </md-input-container>
+
+                <md-button class="md-icon-button" ng-click="food.quantity = food.quantity + 1" flex="35">
+                    <i class="material-icons">add_circle</i>
+                </md-button>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button class="md-primary" ng-click="save()" ng-disabled="cartForm.$invalid">
+                Add
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

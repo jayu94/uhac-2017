@@ -1,0 +1,201 @@
+<md-subheader class="md-title">What would you like today?</md-subheader>
+<div layout="column" layout-padding>
+
+
+<md-tabs md-dynamic-height md-border-bottom>
+  <md-tab label="Breakfast">
+    <div layout-xs="column" layout-gt-xs="row" layout-fill>
+        <md-card flex-gt-xs="50">
+            <img src="./assets/images/food.jpg" class="md-card-image" alt="image caption">
+            <md-menu md-position-mode="target-right target" class="more">
+                <md-button class="md-icon-button" aria-label="Options" ng-click="$mdMenu.open($event)">
+                        <i class="material-icons">more_vert</i>
+                </md-button>
+                <md-menu-content>
+                    <md-menu-item>
+                        <md-button ui-sref="order-view">
+                            View Details
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button>
+                            Add to cart
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button>
+                            Buy now
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+
+            <md-card-content>
+                <span class="md-headline">Chicken Adobo</span>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <div flex layout-align="start center">
+                    <i class="material-icons" style="color:darkorange">star</i>
+                    <i class="material-icons" style="color:darkorange">star</i>
+                    <i class="material-icons" style="color:darkorange">star</i>
+                    <i class="material-icons" style="color:darkorange">star</i>
+                    <i class="material-icons" style="color:darkorange">star_half</i>
+                </div>
+                <md-button class="md-icon-button" aria-label="Options" ng-click="vm.showCartModal($event, 'Chicken Adobo')">
+                    <i class="material-icons">add_shopping_cart</i>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Options" >
+                    <i class="material-icons">bookmark_border</i>
+                </md-button>
+            </md-card-actions>
+        </md-card>
+        <md-card flex-gt-xs="50">
+            <img src="./assets/images/food.jpg" class="md-card-image" alt="image caption">
+
+            <md-menu md-position-mode="target-right target" class="more">
+                <md-button class="md-icon-button" aria-label="Options" ng-click="$mdMenu.open($event)">
+                        <i class="material-icons">more_vert</i>
+                </md-button>
+                <md-menu-content>
+                    <md-menu-item>
+                        <md-button>
+                            View Details
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button>
+                            Add to cart
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button>
+                            Buy now
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+
+            <md-card-content>
+                <span class="md-headline">Chicken Adobo</span>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <div flex layout-align="start center">
+                    <i class="material-icons" style="color:darkorange">star</i>
+                    <i class="material-icons" style="color:darkorange">star</i>
+                    <i class="material-icons" style="color:darkorange">star</i>
+                    <i class="material-icons" style="color:darkorange">star</i>
+                    <i class="material-icons" style="color:darkorange">star_half</i>
+                </div>
+                <md-button class="md-icon-button" aria-label="Options" >
+                    <i class="material-icons">add_shopping_cart</i>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Options" >
+                    <i class="material-icons">bookmark_border</i>
+                </md-button>
+            </md-card-actions>
+        </md-card>
+    </div>
+
+
+  </md-tab>
+  <md-tab label="Lunch">
+      <div layout-xs="column" layout-gt-xs="row" layout-fill>
+          <md-card flex-gt-xs="50">
+                <img src="./assets/images/burger.jpg" class="md-card-image" alt="image caption">
+    
+                <md-menu md-position-mode="target-right target" class="more">
+                    <md-button class="md-icon-button" aria-label="Options" ng-click="$mdMenu.open($event)">
+                            <i class="material-icons">more_vert</i>
+                    </md-button>
+                    <md-menu-content>
+                        <md-menu-item>
+                            <md-button>
+                                View Details
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button>
+                                Add to cart
+                            </md-button>
+                        </md-menu-item>
+                        <md-menu-item>
+                            <md-button>
+                                Buy now
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+    
+                <md-card-content>
+                    <span class="md-headline">Cheese Burger</span>
+                </md-card-content>
+                <md-card-actions layout="row" layout-align="end center">
+                    <div flex layout-align="start center">
+                        <i class="material-icons" style="color:darkorange">star</i>
+                        <i class="material-icons" style="color:darkorange">star</i>
+                        <i class="material-icons" style="color:darkorange">star</i>
+                        <i class="material-icons" style="color:darkorange">star</i>
+                        <i class="material-icons" style="color:darkorange">star_border</i>
+                    </div>
+                    <md-button class="md-icon-button" aria-label="Options">
+                        <i class="material-icons">add_shopping_cart</i>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="Options">
+                        <i class="material-icons">bookmark_border</i>
+                    </md-button>
+                </md-card-actions>
+            </md-card>
+      </div  layout-xs="column" layout-gt-xs="row" layout-fill>
+  </md-tab>
+  <md-tab label="Dinner">
+      <md-card>
+            <img src="./assets/images/shrimp.jpg" class="md-card-image" alt="image caption">
+            <md-menu md-position-mode="target-right target" class="more">
+                <md-button class="md-icon-button" aria-label="Options" ng-click="$mdMenu.open($event)">
+                        <i class="material-icons">more_vert</i>
+                </md-button>
+                <md-menu-content>
+                    <md-menu-item>
+                        <md-button>
+                            View Details
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button>
+                            Add to cart
+                        </md-button>
+                    </md-menu-item>
+                    <md-menu-item>
+                        <md-button>
+                            Buy now
+                        </md-button>
+                    </md-menu-item>
+                </md-menu-content>
+            </md-menu>
+
+
+            <md-card-content>
+                <span class="md-headline">Shrimp</span>
+            </md-card-content>
+            <md-card-actions layout="row" layout-align="end center">
+                <div flex layout-align="start center">
+                    <i class="material-icons" style="color:darkorange">star</i>
+                    <i class="material-icons" style="color:darkorange">star</i>
+                    <i class="material-icons" style="color:darkorange">star</i>
+                    <i class="material-icons" style="color:darkorange">star</i>
+                    <i class="material-icons" style="color:darkorange">star</i>
+                </div>
+                <md-button class="md-icon-button" aria-label="Options">
+                    <i class="material-icons">add_shopping_cart</i>
+                </md-button>
+                <md-button class="md-icon-button" aria-label="Options">
+                    <i class="material-icons">bookmark_border</i>
+                </md-button>
+            </md-card-actions>
+        </md-card>
+  </md-tab>
+</md-tabs>
+
+
+    
+</div>
