@@ -28,3 +28,5 @@ Route::get('/menus/list', 'MenusController@list');
 Route::get('/menus/get/{id}', 'MenusController@item');
 
 Route::get('/payment/pay/{cart_id}', 'PaymentController@makePayment');
+
+Route::get('/cart/get/{id}', 'CartController@getcart');
