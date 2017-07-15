@@ -1,7 +1,69 @@
-<div layout-padding>
-    <div class="md-headline">UNIONBANK</div>
-    <div class="md-title">Payment Gateway</div>
-
-
+<div layout-padding layout="column">
     
+    <div flex>
+        <div class="md-headline">
+            UNIONBANK
+            <span class="md-title">Payment Gateway</span>
+        </div>
+        
+        <div class="md-subhead bold">Credit card information</div>
+        <md-divider></md-divider>
+        <div layout="column">
+            <md-input-container>
+                <md-icon class="material-icons">credit_card</md-icon>
+                <label for="CardNo">Card Number</label>
+                <input type="text" name="CardNo"  />
+            </md-input-container>
+    
+            <div layout="row">
+                <md-input-container flex>
+                    <md-icon class="material-icons">date_range</md-icon>
+                    <label for="mm">MM</label>
+                    <input type="text" name="mm"  />
+                     <div class="hint">Expiry Date</div>
+                </md-input-container>
+                <md-input-container flex>
+                    <label for="yy">YY</label>
+                    <input type="text" name="yy"  />
+                </md-input-container>
+                <md-input-container  flex>
+                    <md-icon class="material-icons">credit_card</md-icon>
+                    <label for="CVV">CVV</label>
+                    <input type="text" name="CVV"  />
+                </md-input-container>
+            </div>
+        </div>
+        <div class="md-subhead bold">Card holder information</div>
+        <md-divider></md-divider>
+        <div layout="column">
+            <md-input-container>
+                <label for="FirstName">First Name</label>
+                <input type="text" name="FirstName"  />
+            </md-input-container>
+            <md-input-container >
+                <label for="LastName">Last Name</label>
+                <input type="text" name="LastName"  />
+            </md-input-container>
+            <md-input-container>
+                <md-icon class="material-icons">phone</md-icon>
+                <label for="PhoneNumber">Phone Number</label>
+                <input type="text" name="PhoneNumber"  />
+            </md-input-container>
+            <md-input-container>
+                <md-icon class="material-icons">room</md-icon>
+                <label>Billing Address</label>
+                <textarea ng-model="user.biography" md-maxlength="150" rows="2" md-select-on-focus></textarea>
+            </md-input-container>
+            <md-input-container>
+                <md-icon class="material-icons">email</md-icon>
+                <label for="Email">Email Address</label>
+                <input type="text" name="Email"  />
+            </md-input-container>
+        </div>
+    </div>
+    <div layout="column" class="primary">
+        <md-button class="md-raised" ui-sref="payment" aria-label="login" md-colors="{ background: 'green-500'}"
+            flex type="button"> <span class="md-title">Checkout</span>
+        </md-button>
+    </div>
 </div>
