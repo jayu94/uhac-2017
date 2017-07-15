@@ -23,10 +23,12 @@ define([
 	// controllers
 	'app/order/orderViewController',
 	'app/order/orderCreateController',
+	'app/payment/paymentController',
 
 ], function(angular, angularRoute, aria, animate, material, messages, datatable, loadingBar, storage, config, route, headerCtrl, sidebarCtrl, messageService, userService, login, 
 orderViewController,
-orderCreateController) {
+orderCreateController,
+paymentController) {
 	
 	'use strict';
 	
@@ -49,32 +51,33 @@ orderCreateController) {
 
 		.controller('orderViewController', orderViewController)
 		.controller('orderCreateController', orderCreateController)
+		.controller('paymentController', paymentController)
 
 
 
 		.run(['$rootScope', '$state', 'userService', 'messageService', function run($rootScope, $state, userService, messageService) {
 
-			//$rootScope.api = "http://api.saladwednesday.xyz/api";
+			$rootScope.api = "http://192.168.1.102/shoplifter/public";
 
-			//$rootScope.$on('unauthorized', function () {
-			//	$state.go("login");
-			//	messageService.show("You have been logged out");
-			//});
+			$rootScope.$on('unauthorized', function () {
+				$state.go("login");
+				messageService.show("You have been logged out");
+			});
 
-			//$rootScope.logout = function(){
-			//	$state.go('login');
-			//};
+			$rootScope.logout = function(){
+				$state.go('login');
+			};
 
-			//$rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams, options){
-			//	if(!userService.authenticated() && toState.name != 'login'){
-			//		event.preventDefault();
-			//		$state.go('login');
-			//	}
-			//	else if(userService.authenticated() && toState.name == 'login'){
-			//		event.preventDefault();
-			//		$state.go('home');
-			//	}
-			//});
+			$rootScope.$on("$stateChangeStart", function(event, toState, toParams, fromState, fromParams, options){
+				if(!userService.authenticated() && toState.name != 'login'){
+					event.preventDefault();
+					$state.go('login');
+				}
+				else if(userService.authenticated() && toState.name == 'login'){
+					event.preventDefault();
+					$state.go('home');
+				}
+			});
 		}]);
 });
 

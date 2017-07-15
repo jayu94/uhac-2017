@@ -1,0 +1,17 @@
+
+<div layout="column" layout-fill>
+    <div flex>
+        <md-list-item layout="row">
+          <div flex="30" class="bold">Order #</div>
+          <div flex="30" class="text-center bold">Date</div>
+          <div flex="40" class="text-right bold">Status</div>
+        </md-list-item>
+        <md-divider></md-divider>
+        <md-list-item layout="row" ng-repeat-start="i in [5,4,3,2,1]">
+          <div flex="30">000{{i}}</div>
+          <div flex="30" class="text-center">2017-07-1{{i}}</div>
+          <div flex="40" class="text-right">{{i == 5 ? 'Pending' : 'Completed'}}</div>
+        </md-list-item>
+        <md-divider ng-repeat-end></md-divider>
+    </div>
+</div>

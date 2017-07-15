@@ -1,0 +1,29 @@
+<md-dialog aria-label="cart">
+    <form ng-cloak name="cartForm">
+        <md-toolbar style="background:green !important;">
+            <div class="md-toolbar-tools">
+                <h2>Success</h2>
+                <span flex></span>
+                <md-button class="md-icon-button" ng-click="close()">
+                    <md-icon class="material-icons" aria-label="Close dialog">close</md-icon>
+                </md-button>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content text-center" layout="column" layout-align="center center">
+
+                <span class="md-headline">Payment Successful</span>
+                <p>Thank you for shopping! Your order will be ready for lifting in 1 hour</p>
+                <p>Your order number is: <span class="bold">#006</span></p>
+
+
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button class="md-primary" ng-click="save()" ng-disabled="cartForm.$invalid">
+                OK
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

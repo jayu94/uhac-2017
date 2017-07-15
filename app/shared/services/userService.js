@@ -16,7 +16,7 @@ define([], function() {
             function login(email, password){
                 var user = { email: email, password: password };
 
-                return $http.post($rootScope.api + "/auth", user)
+                return $http.post($rootScope.api + "/user/login", user)
                     .then(
                         function(response){
                             $localStorage.access_token = response.data.token;
@@ -32,9 +32,9 @@ define([], function() {
 
             function authenticated (){
                 // DEMO PURPOSES ONLY:  
-                return !$state.includes('login');
+                // return !$state.includes('login');
                 // COMMENT THIS OUT WHEN AUTH IS CONFIGURED
-                //return $localStorage.access_token !== null && $localStorage.access_token !== undefined;
+                return $localStorage.access_token !== null && $localStorage.access_token !== undefined;
             }
             
             return service;

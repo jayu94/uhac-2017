@@ -20,8 +20,8 @@
           </div>
           <div flex></div>
         </md-list-item>
-        
-        <md-list-item layout="row" ng-repeat="i in [1,2,3,4,5]">
+        <md-divider></md-divider>
+        <md-list-item layout="row" ng-repeat-start="i in [1,2,3,4,5]">
           <div flex="40">
             Cheese Burger
           </div>
@@ -36,7 +36,7 @@
             </md-button>
           </div>
         </md-list-item>
-        <md-divider></md-divider>
+        <md-divider ng-repeat-end></md-divider>
         <div layout="row" layout-padding>
             <div flex="66" class="bold">Total</div>
             <div flex="33" class="bold">100.00</div>

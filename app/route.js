@@ -32,7 +32,13 @@ define([], function () {
              .state('payment', {
                 url: "/payment",
                 templateUrl: './app/payment/index.html',
-                // controller: 'cartController',
+                controller: 'paymentController',
+                controllerAs: 'vm'
+            })
+             .state('order-history', {
+                url: "/order/history",
+                templateUrl: './app/order/history.html',
+                // controller: 'paymentController',
                 // controllerAs: 'vm'
             })
 

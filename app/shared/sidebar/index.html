@@ -1,7 +1,7 @@
 <md-toolbar class="" md-colors="{ background: 'grey-50'}" md-whiteframe="1">
 
 <div class="md-toolbar-tools">
-    <h2 flex md-truncate>CECE PROJECT</h2>
+    <h2 flex md-truncate>ShopLift</h2>
 </div>
 </md-toolbar>
 
@@ -13,8 +13,6 @@
   <div ng-repeat="item in sidebar.menu">
     <md-list-item  ng-if="item.type == 'toggle'" ng-click="sidebar.toggleItem($index)" layout="row">
  				<ng-md-icon icon="{{ item.icon }}"></ng-md-icon>
-
-
         <!--<i class="material-icons">{{ item.icon }}</i>-->
         <md-item-content md-ink-ripple layout="row" flex>
           {{item.name}}
@@ -43,6 +41,7 @@
           {{item.name}}
         </md-item-content>
     </md-list-item>
+    <md-divider></md-divider>
   </div>
 
   <div layout="column" layout-align="end stretch" flex>

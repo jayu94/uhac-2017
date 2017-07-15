@@ -11,7 +11,8 @@ define([], function() {
         function login() {
             userService.login(vm.user.email, vm.user.password)
             .then(
-                function(){
+                function(response){
+                    console.log(response);
                     $state.go('home');
                 },
                 function (response){

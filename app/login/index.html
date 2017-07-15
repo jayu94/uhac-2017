@@ -3,27 +3,34 @@
 	<div flex="20" layout-align="center center" layout="column">
 		<img src="./assets/images/logo.PNG" flex style="margin:auto;height:100%;width:auto;" alt="">
 	</div>
-	<form action="" flex="65">
-	<div layout="column" layout-padding>
-		<md-input-container flex>
-			<label>Email</label>
-			<input type="email" name="email" required ng-model="vm.user.email" class="font-white">
-			<div ng-messages="loginForm.email.$error">
-				<ng-message when="required" translate>This field is required.</ng-message>
-				<ng-message when="email" translate>Invalid email address.</ng-message>
-			</div>
-		</md-input-container>
-		<md-input-container flex>
-			<label>Password</label>
-			<input type="password" name="password" required ng-model="vm.user.password" class="font-white">
-			<div ng-messages="loginForm.password.$error">
-				<ng-message when="required" translate>This field is required.</ng-message>
-			</div>
-		</md-input-container>
+	<div class="text-center md-caption">
+		<i>Shopping made so easy it should be a crime!</i>
 	</div>
+	<form flex="65" name="loginForm">
+		<div layout="column" layout-padding>
+			<md-input-container flex>
+				<label>Email</label>
+				<input type="email" name="email" required ng-model="vm.user.email" class="">
+				<div ng-messages="loginForm.email.$error">
+					<ng-message when="required" translate>This field is required.</ng-message>
+					<ng-message when="email" translate>Invalid email address.</ng-message>
+				</div>
+			</md-input-container>
+			<md-input-container flex>
+				<label>Password</label>
+				<input type="password" name="password" required ng-model="vm.user.password" class="">
+				<div ng-messages="loginForm.password.$error">
+					<ng-message when="required" translate>This field is required.</ng-message>
+				</div>
+			</md-input-container>
+			<div class="text-center"><a href="/">Forgot Password?</a></div>
+			<div class="text-center"><a href="/">Signup</a></div>
+		</div>
 	</form>
-	<div flex layout="row" md-colors="{ background: 'grey-200'}" layout-fill layout-align="center center">
-		<md-button class="md-link md-primary" aria-label="login" flex type="button" ui-sref="home">Login</md-button>
+	<div flex layout="row" md-colors="{ background: 'blue-800'}" layout-fill layout-align="center center">
+		<md-button ng-click="vm.login()" ng-disabled="loginForm.$invalid" class="md-link md-primary bold font-white" aria-label="login" flex type="button" ui-sref="home">
+			Login
+		</md-button>
 	</div>
 </div>
 
